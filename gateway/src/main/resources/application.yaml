@@ -1,0 +1,17 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: gateway
+  cloud:
+    gateway:
+      routes:
+        - id: inventory-services
+          uri: http://inventory-service:8083/inventory-service/
+          predicates:
+            - Path=/inventory-service/api/**
+        - id: booking-service
+          uri: http://booking-service:8082/booking-service/
+          predicates:
+            - Path=/booking-service/api/bookings/**

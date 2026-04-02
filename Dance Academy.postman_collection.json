@@ -1,0 +1,202 @@
+{
+	"info": {
+		"_postman_id": "03296752-51bc-45e2-896a-eebf91f70a03",
+		"name": "Dance Academy",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "18255255"
+	},
+	"item": [
+		{
+			"name": "Dance Class",
+			"item": [
+				{
+					"name": "Dance Class List",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/inventory-service/api/dance-classes",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"inventory-service",
+								"api",
+								"dance-classes"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Studio",
+			"item": [
+				{
+					"name": "Studio Add",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"studioName\": \"Studio 1\",\r\n  \"location\": \"Kembangan\",\r\n  \"capacity\": 20\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/inventory-service/api/studios",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"inventory-service",
+								"api",
+								"studios"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Studio List",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/inventory-service/api/studios",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"inventory-service",
+								"api",
+								"studios"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Bookings",
+			"item": []
+		},
+		{
+			"name": "Dance Class Add",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"Dance Hiphop Intermediete\",\r\n  \"studioId\": \"b6274193-bd27-42dd-8553-997cdcab87f1\",\r\n  \"classTime\": \"2026-04-03 11:00:00\",\r\n  \"durationMinutes\": 120\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/inventory-service/api/dance-classes",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"inventory-service",
+						"api",
+						"dance-classes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Booking List",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/booking-service/api/bookings",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"booking-service",
+						"api",
+						"bookings"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Booking Class",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"userName\": \"Kevin\",\r\n  \"classId\": \"182cb088-275d-4d29-aea2-c20a6d77f9ed\",\r\n  \"qty\": 5\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/booking-service/api/bookings",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"booking-service",
+						"api",
+						"bookings"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Booking Studio Report",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/booking-service/api/bookings/report/per-studio",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"booking-service",
+						"api",
+						"bookings",
+						"report",
+						"per-studio"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

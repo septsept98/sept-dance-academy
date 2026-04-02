@@ -1,0 +1,35 @@
+version: '3.8'
+
+services:
+  inventory-service:
+    build:
+      context: ./inventory-service
+    ports:
+      - "8083:8083"
+    networks:
+      - dance-academy-network
+
+  booking-service:
+    build:
+      context: ./booking-service
+    ports:
+      - "8082:8082"
+    networks:
+      - dance-academy-network
+    environment:
+      - INVENTORY_SERVICE_URL=http://inventory-service:8083/inventory-service/
+
+  gateway:
+    build:
+      context: ./gateway
+    ports:
+      - "8080:8080"
+    depends_on:
+      - inventory-service
+      - booking-service
+    networks:
+      - dance-academy-network
+
+networks:
+  dance-academy-network:
+    driver: bridge

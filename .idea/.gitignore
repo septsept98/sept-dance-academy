@@ -1,0 +1,16 @@
+# Default ignored files
+/shelf/
+/workspace.xml
+
+# IntelliJ
+.idea/
+*.iml
+
+# Build
+target/
+
+# Logs
+*.log
+
+# OS
+.DS_Store
